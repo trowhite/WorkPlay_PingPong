@@ -18,11 +18,11 @@ Vagrant.configure("2") do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  config.vm.network :forwarded_port, guest: 3000, host: 3001
+  config.vm.network :forwarded_port, host: 8080, guest: 3000
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network :private_network, ip: "192.168.33.10"
+  #config.vm.network :private_network, ip: "192.168.33.103"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -38,6 +38,7 @@ Vagrant.configure("2") do |config|
   # Enable nfs for faster performance. Ingored on Windows host.
   # Still have yet to figure this out for home developemnt
   ####config.vm.synced_folder ".", "/vagrant", type: nfs
+  config.vm.synced_folder "src/", "/home/vagrant/src/"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
