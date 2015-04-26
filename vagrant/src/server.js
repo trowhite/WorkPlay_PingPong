@@ -4,15 +4,10 @@
  *  sudo netstat -ltpn
  *  ifconfig
  */
-/*
-var http = require('http');
-http.createServer(function (req, res) {
-  console.log('a single connection!');
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello Outside World\n');
-}).listen(3000, '0.0.0.0');
-console.log('Server running at http://127.0.0.1:3000/');
-*/
+
+//
+// POC that just serves up the static files
+//
 var static = require('node-static');
 var http = require('http');
 
@@ -23,3 +18,4 @@ http.createServer(function (req, res) {
   file.serve(req, res);
 }).listen(3000);
 console.log('Server running at http://127.0.0.1:3000/');
+
