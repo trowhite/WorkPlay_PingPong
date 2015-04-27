@@ -31,8 +31,7 @@ node_modules
 .vagrant
 
 # PRIVATE DATA - keep out of public repo (use email instead?)
-DoublesQ1_20150327T0909.html
-SillyQ2_20150420T1356.html
+vagrant/src/data/*
 
 # POC items - just for local demo and can probably be deleted
 miniweb/*

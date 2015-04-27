@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>EDIT SillyQ2_20150420T1356</title>
+
+    <script type='text/javascript' src='/3rd_party/jquery-1.6.4.min.js'></script>
+
+    <script type='text/javascript' src='/3rd_party/jquery.bracket.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="/3rd_party/jquery.bracket.min.css">
+
+    <script type="text/javascript" src='/data/SillyQ2_20150420T1356.js'></script>
+
+    <script type='text/javascript'>
+        //<![CDATA[ 
+        $(window).load(function() {
+            /* Called whenever bracket is modified
+			 *
+			 * data:     changed bracket object in format given to init
+			 * userData: optional data given when bracket is created.
+			 */
+            function saveFn(data, userData)
+            {
+                var json = JSON.stringify(data);
+                $.ajax("http://127.0.0.1:8080/api/savebracket/SillyQ2_20150420T1356",
+                {
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    type: 'POST',
+                    data: json
+                });
+			}
+			 
+			$(function()
+			{
+			    var container = $('div#big .demo');
+			    container.bracket(
+			    {
+			      init: bigData,
+			      save: saveFn
+			    });
+			})
+        }); //]]>
+    </script>
+
+
+</head>
+
+<body>
+	<div class="navigation">
+		<a href="index.html">Home</a>
+	</div>
+    <div class="note">
+        <h2><b>EDIT PAGE</b></h2>
+    </div>
+    <div id="big">
+        <div class="demo"></div>
+    </div>
+</body>
+
+
+</html>
